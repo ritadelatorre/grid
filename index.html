@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diseño Grid</title>
+  <style>
+    body {
+      font-family: Nunito, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns:  3fr 1fr;
+      grid-template-rows: minmax(auto, 70px) minmax(auto, 70px) 1fr minmax(auto, 70px);
+      /* 
+        header nav y footer ocupan justo lo necesario (auto)
+        - La 3ra fila ocupa el resto
+      */
+      grid-template-areas:
+        "header header"
+        "nav nav"
+        "main aside"
+        "footer footer";
+      height: 100vh;        
+      gap: 5px;
+    }
+
+    .container {
+      background-color: #f3f3f3;
+    }
+
+    .container>* {
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+
+    header {
+      grid-area: header;
+      background-color: #ffcc80;
+    }
+
+    nav {
+      grid-area: nav;
+      background-color: #a5d6a7;
+    }
+
+    aside {
+      grid-area: aside;
+      background-color: #90caf9;
+    }
+
+    main {
+      grid-area: main;
+      background-color: #ef9a9a;
+    }
+
+    footer {
+      grid-area: footer;
+      background-color: #b39ddb;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>Header</header>
+    <nav>Nav</nav>
+    <aside>Aside</aside>
+    <main>Main</main>
+    <footer><a href="css-grid.pdf" download="css-grid.pdf" target="_blank">css-grid.pdf</a></footer>
+  </div>
+</body>
+
+</html>
